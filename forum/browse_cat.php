@@ -25,7 +25,7 @@ else
 		//display category data
 		while($row = mysql_fetch_assoc($result))
 		{
-			echo '<div class="module blue">
+			echo '<div class="module green">
 			<h2>' . $row['cat_name'] . '
 			<a href="category.php?id='  . $row['cat_id']  .'">
 			View Topics

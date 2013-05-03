@@ -93,7 +93,7 @@
 	margin: 0 0 20px 0;
 }
 .module h2 {
-	background: #ccc;
+	background: #9FCFFF;
 	line-height: 2;
 	padding: 0 0 0 10px;
 	font-size: 16px;
@@ -106,10 +106,10 @@
 	color: #333;
 	padding: 0 10px;
 	border-left: 5px solid white;
-	-webkit-transition: padding 0.1s linear;
-	-moz-transition: padding 0.1s linear;
-	-ms-transition: padding 0.1s linear;
-	-o-transition: padding 0.1s linear;
+	-webkit-transition: padding 0.3s linear;
+	-moz-transition: padding 0.3s linear;
+	-ms-transition: padding 0.3s linear;
+	-o-transition: padding 0.3s linear;
 }
 .module h2 a:hover {
 	padding: 0 14px;
@@ -151,7 +151,7 @@
 	border-right: 8px solid white;
 	margin-top: -8px;
 }
-/**/
+/*module blue*/
 .module.blue h2 a {
 	background: #a2d6eb;
 }
@@ -168,7 +168,41 @@
 .module.blue h2 a:hover:after {
 	border-right-color: #c5f0ff;
 }
-/**/
+/*module green*/
+.module.green h2 a {
+	background: #9cf1a4;
+}
+.module.green h2 a:hover {
+	background: #bbffcf;
+}
+.module.green h2 a:after {
+	left: -5px;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-right: 6px solid #9cf1a4;
+	margin-top: -6px;
+}
+.module.green h2 a:hover:after {
+	border-right-color: #bbffcf;
+}
+/*module red*/
+.module.red h2 a {
+	background: #f0a5b5;
+}
+.module.red h2 a:hover {
+	background: #ffc7d2;
+}
+.module.red h2 a:after {
+	left: -5px;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-right: 6px solid #f0a5b5;
+	margin-top: -6px;
+}
+.module.red h2 a:hover:after {
+	border-right-color: #ffc7d2;
+}
+/*coloumed*/
 .left{
 	
 	width:70%;
@@ -189,6 +223,82 @@
 #date{
 	font-size:12px;
 	text-align:right;
+}
+/*post blocks*/
+.note {
+   position:relative;
+   
+   padding:1em 1.5em;
+   margin:auto;
+   color:#fff;
+   background:#99b8d9;
+   overflow:hidden;
+   
+}
+
+.note:before {
+   content:"";
+   position:absolute;
+   top:0;
+   right:0;
+   border-width:0 16px 16px 0;
+   border-style:solid;
+   border-color:#fff #fff #658E15 #658E15;
+   background:#658E15;
+   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   display:block; width:0; /* Firefox 3.0 damage limitation */
+}
+
+.note.rounded {
+   -webkit-border-radius:5px 0 5px 5px;
+   -moz-border-radius:5px 0 5px 5px;
+   border-radius:5px 0 5px 5px;
+}
+
+.note.rounded:before {
+   border-width:8px;
+   border-color: #f6ebc1  #f6ebc1 transparent transparent;
+   -webkit-border-bottom-left-radius:5px;
+   -moz-border-radius:0 0 0 5px;
+   border-radius:0 0 0 5px;
+}
+/**/
+.arrow_box {
+	position: relative;
+	background: #88b7d5;
+	border: 4px solid #c2e1f5;
+	width 35%;
+	height:100px;
+	float:left;
+	border-radius:10px; 
+	padding:5px 10px;
+	
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #88b7d5;
+	border-width: 30px;
+	top: 50%;
+	margin-top: -30px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #c2e1f5;
+	border-width: 36px;
+	top: 50%;
+	margin-top: -36px;
 }
 </style>
 <body>
