@@ -3,7 +3,7 @@
 include 'connect.php';
 include 'header.php';
 
-//first select the category based on $_GET['cat_id']
+//first select the category based on $_GET['id']
 $sql = "SELECT
 			cat_id,
 			cat_name,
@@ -34,21 +34,19 @@ else
 		}
 	
 		//do a query for the topics
-		$sql = "SELECT	
-					topic_id,
-					topic_subject,
-					topic_date,
-					topic_cat
-				FROM
-					topics
-				WHERE
-					topic_cat = " . mysql_real_escape_string($_GET['id']);
+		$sql = 'SELECT 
+		users.*, topics.*
+		FROM users INNER JOIN topics 
+		ON users.user_id = topics.topic_by
+	    WHERE topics.topic_cat =  '. mysql_real_escape_string($_GET['id']) . ';';
 		
+
 		$result = mysql_query($sql);
 		
 		if(!$result)
 		{
 			echo 'The topics could not be displayed, please try again later.';
+			echo $sql;
 		}
 		else
 		{
@@ -58,6 +56,23 @@ else
 			}
 			else
 			{
+				while($row = mysql_fetch_assoc($result))
+		{
+			echo '<div class="module blue">
+			<h2>' . $row['user_name'] . '
+			<a href="topic.php?id='  . $row['topic_by']  .'">
+			View Comments
+			</a></h2>';
+				echo'<ul>
+				<li>'  . $row['topic_subject'] . '</li>
+				<li><nav id="date">Posted on : '  . $row['topic_date'] . '</nav></li>
+					</ul>
+			</div>';				
+
+		}
+				
+				
+				/*
 				//prepare the table
 				echo '<table border="1">
 					  <tr>
@@ -75,11 +90,11 @@ else
 							echo date('d-m-Y', strtotime($row['topic_date']));
 						echo '</td>';
 					echo '</tr>';
-				}
+				}*/
 			}
 		}
 	}
 }
-
+echo '</table>';
 include 'footer.php';
 ?>

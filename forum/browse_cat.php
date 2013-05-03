@@ -25,10 +25,16 @@ else
 		//display category data
 		while($row = mysql_fetch_assoc($result))
 		{
-			echo '<h2><a class="links" href="category.php?id='  . $row['cat_id']  .'">&prime;' . $row['cat_name'] . '&prime;</a> category</h2>';
-			echo '<hr width=50% align="left">';
-			echo '&Prime;'  . $row['cat_description'] . '&Prime; <br />';
-			echo '<hr>';
+			echo '<div class="module blue">
+			<h2>' . $row['cat_name'] . '
+			<a href="category.php?id='  . $row['cat_id']  .'">
+			View Topics
+			</a></h2>';
+				echo'<ul>
+				<li>'  . $row['cat_description'] . '</li>
+					</ul>
+			</div>';				
+
 		}
 	}
 }

@@ -6,6 +6,7 @@ body {
 
 #wrapper {
 	margin: 0 auto; 			/* center the page */
+	width:100%;
 }
 
 #content {
@@ -15,7 +16,7 @@ body {
 	font-family: Arial;
 	padding: 10px 20px;
 	text-align: left;
-	width: 100%;
+	width: 96.9%;
 	margin-top:0;				/* fill up the entire div */
 	z-index:1;
 	position:relative;
@@ -66,8 +67,8 @@ table a:hover {
 }
 
 th {
-	background-color: #B40E1F;
-	color: #F0F0F0;
+	background-color: #eee;
+	color: #666;
 }
 
 td {
