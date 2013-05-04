@@ -10,50 +10,33 @@
   <!--  <link rel="stylesheet" href="nav.css" type="text/css">-->
 </head>
 <style>
-.menu{
-    background-color: #333; }
-.menu ul{
-    margin: 0; padding: 0;
-    float: left;}
- 
-.menu ul li {
-    display: inline;}
- 
-.menu ul li a {
-    float: left; text-decoration: none;
-    color: white; 
-    padding: 10.5px 11px;
-    background-color: #333; }
- 
-.menu ul li a:visited{
-    color: white;}
- 
-.menu ul li a:hover, .menu ul li .current{
-    color: #fff;
-    background-color:#0b75b2;}
-/**/
-.user_menu{
-    background-color: #0b75b2; }
-.user_menu ul{
+.top_bar{
+    background-color: #09F;
+	width:100%;
+	height:41px; }
+.top_bar ul{
     margin: 0; padding: 0;
     float: right;}
  
-.user_menu ul li{
+.top_bar ul li {
     display: inline;}
  
-.user_menu ul li a{
+.top_bar ul li a {
     float: left; text-decoration: none;
     color: white; 
     padding: 10.5px 11px;
-    background-color: #0b75b2; }
+    background-color: #09f; }
  
-.user_menu ul li a:visited{
+.top_bar ul li a:visited{
     color: white;}
  
-.user_menu ul li a:hover, .user_menu ul li .current{
+.top_bar ul li a:hover, .menu ul li .current{
     color: #fff;
-    background-color:#333;}
-/*for textual links*/
+    background-color:#0b75b2;
+}
+#top_right{
+	float:left;
+}
 .links { 
 	text-decoration:none;
 	font-family:"Courier New", Courier, monospace;
@@ -65,26 +48,26 @@
 	color:#000;
 }
 /*for sub menus*/
-.menu ul ul{
+.top_bar ul ul{
 	display:none;
 }
-.menu ul li:hover > ul{
+.top_bar ul li:hover > ul{
 	display:block;
 }
-.menu ul li{
+.top_bar ul li{
 	float:left;
 }
-.menu ul{
+.top_bar ul{
 	display:inline-table;
 	position:relative;
 }
-.menu ul ul li{
+.top_bar ul ul li{
 	float:none;
 }
-.menu ul ul {
+.top_bar ul ul {
 	position: absolute;
 	padding: 0 0px;
-	margin-top:38px;
+	margin-top:41px;
 	z-index:2;
 }
 /*new content area*/
@@ -224,47 +207,7 @@
 	font-size:12px;
 	text-align:right;
 }
-/*post blocks*/
-.note {
-   position:relative;
-   
-   padding:1em 1.5em;
-   margin:auto;
-   color:#fff;
-   background:#99b8d9;
-   overflow:hidden;
-   
-}
-
-.note:before {
-   content:"";
-   position:absolute;
-   top:0;
-   right:0;
-   border-width:0 16px 16px 0;
-   border-style:solid;
-   border-color:#fff #fff #658E15 #658E15;
-   background:#658E15;
-   -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
-   display:block; width:0; /* Firefox 3.0 damage limitation */
-}
-
-.note.rounded {
-   -webkit-border-radius:5px 0 5px 5px;
-   -moz-border-radius:5px 0 5px 5px;
-   border-radius:5px 0 5px 5px;
-}
-
-.note.rounded:before {
-   border-width:8px;
-   border-color: #f6ebc1  #f6ebc1 transparent transparent;
-   -webkit-border-bottom-left-radius:5px;
-   -moz-border-radius:0 0 0 5px;
-   border-radius:0 0 0 5px;
-}
-/**/
+/*Boxes*/
 .arrow_box {
 	position: relative;
 	background: #88b7d5;
@@ -300,12 +243,21 @@
 	top: 50%;
 	margin-top: -36px;
 }
+#top_right{
+	float:left;}
+#site_name{
+	border-right: ridge thick #0C0;
+	font-weight:bold;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+	font-variant:small-caps;
+}
 </style>
 <body>
-<h1>IT HELP CENTER</h1>
-	<div id="wrapper">
-	<nav class="menu">
-<ul>
+<!--<h1>IT HELP CENTER</h1>-->
+<div id="wrapper">
+<div class="top_bar">
+<ul  id="top_right">
+<li id="site_name"><a href="index.php">IT Help Center</a></li>
 <li><a href="index.php">Home</a></li>
 <li><a href="create_topic.php">New Post</a></li>
 <li><a href="#">Category</a>
@@ -316,24 +268,25 @@
 <li><a href="rules.php">Rules</a></li>
 <li><a href="about.php">About Us</a></li>
 </ul>
-</nav>
-        <div class="user_menu">
-		<?php
+<?php
 		if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true)
 		{
-			echo '<ul><li><a href="#">Hello <b>' . htmlentities($_SESSION['user_name']) . '</b>. Not you? </a></li><li><a href="signout.php">Sign out</a></li></ul>';
+			echo '
+			<ul>
+			<li><a href="#">Hello <b>' . htmlentities($_SESSION['user_name']) . '</b>. Not you? </a></li>
+			<li><a href="signout.php">Sign out</a></li>
+			</ul></div>';
 		}
 		else
 		{
 			echo '<ul>
 					<li><a href="signin.php">Sign in</a></li>
 					<li><a href="signup.php">Create Account</a></li>
-				 </ul>';
+				 </ul></div>';
 		}
-		?>
-      </div>  
-		
-	
+?>
+
+
 		<div id="content">
 <?php
 echo "<mm:dwdrfml documentRoot=" . __FILE__ .">";$included_files = get_included_files();foreach ($included_files as $filename) { echo "<mm:IncludeFile path=" . $filename . " />"; } echo "</mm:dwdrfml>";
