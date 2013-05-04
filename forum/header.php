@@ -248,8 +248,8 @@
 #site_name{
 	border-right: ridge thick #0C0;
 	font-weight:bold;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif ;
 	font-variant:small-caps;
+	-ms-font-size:small;
 }
 </style>
 <body>
