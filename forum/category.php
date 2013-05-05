@@ -59,7 +59,7 @@ else
 				while($row = mysql_fetch_assoc($result))
 		{
 			echo '<div class="module red">
-			<h2>' . $row['user_name'] . '
+			<h2>' . $row['user_name'] . '&nbsp;&nbsp;<tt><x>Posted :</tt></x>
 			<a href="topic.php?id='  . $row['topic_by']  .'">
 			View Comments
 			</a></h2>';

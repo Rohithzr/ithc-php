@@ -295,6 +295,34 @@ input{
 .button:hover{ 
 	background: url(images/button-bg-rotated.png)  repeat-x bottom;   
 	color: black; }
+	.button2{
+	background: url(images/button-bg.png) repeat-x top center; 
+	border: 1px solid #999;
+	width:100%;
+	padding:10px;
+	margin-left:10px;
+	}
+.button2:hover{ 
+	background: url(images/button-bg-rotated.png)  repeat-x bottom;   
+	color: black; }
+textarea{
+	font-size:18px;
+}
+.replyform{
+	box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	-webkit-box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	padding:20px;
+	margin-left:20px;
+	margin-top:30px;
+	margin-bottom:30px;
+	width:700px;
+	border-radius:10px;
+
+}
+x{
+font-weight:lighter;
+}
 /*
 
 legend				{ display: none; }

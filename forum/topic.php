@@ -39,7 +39,7 @@ else
 			
 			*/
 			echo'<div class="module red">
-			<h2>' . $row['user_name'] . '
+			<h2>' . $row['user_name'] . '&nbsp;&nbsp;<tt>Posted:</tt>
 			<a href="#">
 			Visit Profile
 			</a></h2>';
@@ -75,7 +75,7 @@ else
 				
 				echo'<div class="module red">
 				<ul>
-				<li><b>' . $posts_row['user_name'] . '</b> said :</li>
+				<li><b>' . $posts_row['user_name'] . '</b>&nbsp;&nbsp;<tt>says :</tt></li>
 				<li>' . $posts_row['post_content'] . '</li>
 				<li><nav id="date">Posted on : '  . $posts_row['post_date'] . '</nav></li>
 				</div>';
@@ -136,23 +136,22 @@ else
 						  </tr>';
 				}
 			}
-			
+			*/
 			if(!$_SESSION['signed_in'])
 			{
-				echo '<tr><td colspan=2>You must be <a href="signin.php">signed in</a> to reply. You can also <a href="signup.php">sign up</a> for an account.';
+				echo 'You must be <a href="signin.php">signed in</a> to reply. You can also <a href="signup.php">sign up</a> for an account.';
 			}
 			else
 			{
 				//show reply box
-				echo '<tr><td colspan="2"><h2>Reply:</h2><br />
-					<form method="post" action="reply.php?id=' . $row['topic_id'] . '">
-						<textarea name="reply-content"></textarea><br /><br />
-						<input type="submit" value="Submit reply" />
-					</form></td></tr>';
+				echo '<form method="post" class="replyform" action="reply.php?id=' . $row['topic_id'] . '">
+						<label for="reply-content">Your Reply</label>
+						<textarea name="reply-content"></textarea>
+						<input type="submit" value="Post" class="button2" />
+					</form>';
 			}
 			
 			//finish the table
-			echo '</table>';*/
 		
 	
 
