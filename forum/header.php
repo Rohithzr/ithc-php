@@ -249,8 +249,68 @@
 	border-right: ridge thick #0C0;
 	font-weight:bold;
 	font-variant:small-caps;
-	-ms-font-size:small;
 }
+/**/
+.upform	{ width: 450px;
+		 margin: 10% 35%;
+		 float:left; 
+}
+legend{
+	background:#FFF;
+	padding:15px;
+	font-size:16px;
+	font-weight:bold;
+	border-radius:10px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5) inset;
+	-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.5) inset;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.5) inset;
+}
+fieldset{
+	box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	-webkit-box-shadow: 0px 0px 50px rgba(0,0,0,1);
+	border-radius:13px;
+	border-style:none;
+}
+label{
+	width: 115px; 
+	float: left; 
+	margin: 0 10px 0 0; 
+	padding: 9px 0 0 0; 
+	font-size: 16px;
+}
+input{ 
+	width: 220px; 
+	display: block; 
+	padding: 4px; 
+	margin: 0 0 10px 0; 
+	font-size: 18px;
+}
+.button{
+	background: url(images/button-bg.png) repeat-x top center; 
+	border: 1px solid #999;
+	width:100%;
+	padding:10px;
+	}
+.button:hover{ 
+	background: url(images/button-bg-rotated.png)  repeat-x bottom;   
+	color: black; }
+/*
+
+legend				{ display: none; }
+
+fieldset			{ border: 0; }
+
+label				{ width: 115px; text-align: right; float: left; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 16px; }
+
+input				{ width: 220px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 18px;
+					  color: #3a3a3a; font-family: Georgia, serif;}
+input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
+					  
+.button				{ background: url(images/button-bg.png) repeat-x top center; border: 1px solid #999;
+					  -moz-border-radius: 5px; padding: 5px; color: black; font-weight: bold;
+					  -webkit-border-radius: 5px; font-size: 13px;  width: 70px; }
+.button:hover		{ background: white; color: black; }*/
 </style>
 <body>
 <!--<h1>IT HELP CENTER</h1>-->

@@ -1,20 +1,29 @@
+<div class="sign_up">
 <?php
 //signup.php
 include 'connect.php';
 include 'header.php';
 
-echo '<h3>Sign up</h3><br />';
-
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
     /*the form hasn't been posted yet, display it
 	  note that the action="" will cause the form to post to the same page it is on */
-    echo '<form method="post" action="">
- 	 	Username: <input type="text" name="user_name" /><br />
- 		Password: <input type="password" name="user_pass"><br />
-		Password again: <input type="password" name="user_pass_check"><br />
-		E-mail: <input type="email" name="user_email"><br />
- 		<input type="submit" value="Sign Up" />
+    
+	echo '<form class="upform" method="post" action="">
+	<fieldset>
+	<legend>Sign Up</legend>
+		<label for="user_name">Username</label>
+		
+ 	 	<input type="text" name="user_name" />
+		<label for="user_pass">Password</label>
+ 		<input type="password" name="user_pass">
+		<label for="user_pass_check">Retype</label>
+		<input type="password" name="user_pass_check">
+		<label for="user_email">Email</label>
+		<input type="email" name="user_email">
+		
+ 		<input type="submit" value="Sign Up" class="button" />
+		</fieldset>
  	 </form>';
 }
 else
@@ -45,6 +54,9 @@ else
 		if($_POST['user_pass'] != $_POST['user_pass_check'])
 		{
 			$errors[] = 'The two passwords did not match.';
+		}
+		if(strlen($_POST['user_pass']) <= 6){
+			$errors[]='Password should be more than 6 letters';
 		}
 	}
 	else
@@ -91,3 +103,4 @@ else
 
 include 'footer.php';
 ?>
+</div>

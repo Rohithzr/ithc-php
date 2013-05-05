@@ -3,8 +3,6 @@
 include 'connect.php';
 include 'header.php';
 
-echo '<h3>Sign in</h3><br />';
-
 //first, check if the user is already signed in. If that is the case, there is no need to display this page
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true)
 {
@@ -16,11 +14,22 @@ else
 	{
 		/*the form hasn't been posted yet, display it
 		  note that the action="" will cause the form to post to the same page it is on */
-		echo '<form method="post" action="">
+		echo '<form class="upform" method="post" action="">
+	<fieldset>
+	<legend>Sign In</legend>
+		<label for="user_name">Username</label>
+		<input type="text" name="user_name" />
+		<label for="user_pass">Password</label>
+ 		<input type="password" name="user_pass">
+		
+ 		<input type="submit" value="Sign in" class="button" />
+		</fieldset>
+ 	 </form>';
+		/*echo '<form method="post" action="">
 			Username: <input type="text" name="user_name" /><br />
 			Password: <input type="password" name="user_pass"><br />
 			<input type="submit" value="Sign in" />
-		 </form>';
+		 </form>';*/
 	}
 	else
 	{
